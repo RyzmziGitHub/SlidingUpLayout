@@ -56,7 +56,9 @@ public class SlidingUpLayout extends ViewGroup{
         @Override
         public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
             headerTop = top;
-            requestLayout();
+//            requestLayout();
+            contentView.setBottom(getBottom());
+            headerView.offsetTopAndBottom(dy);
         }
 
         @Override
